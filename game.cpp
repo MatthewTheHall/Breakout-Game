@@ -161,7 +161,7 @@ void Circle::CheckCircleCollision(Circle* other)
     }
 }
 
-// move the circle one frame
+// move the circle one frame & slow down velocity
 void Circle::MoveOneStep()
 {
 	x += velocityX;
@@ -274,7 +274,7 @@ void GameManager::Update()
 void GameManager::RemoveDeletedBalls()
 {
     // backwards iterator to remove elements
-    for (int i = static_cast<int>(balls.size()) - 1; i >= 0; i--) //int i, i >= 0
+    for (int i = static_cast<int>(balls.size()) - 1; i >= 0; i--) 
     {
 	    if (balls[i].deleteCircle)
 	    {
